@@ -8,22 +8,28 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --emerald: #10B981;
-            --cyan: #06B6D4;
-            --dark: #0F172A;
-            --dark-2: #1E293B;
-            --dark-3: #334155;
-            --text: #F1F5F9;
-            --text-muted: #94A3B8;
-            --border: rgba(255,255,255,0.08);
+            --green:       #4ADE80;
+            --green-light: #86EFAC;
+            --cyan:        #22D3EE;
+            --amber:       #FBBF24;
+            --red:         #FF6B6B;
+            --bg:          #0D0D0D;
+            --surface:     #161616;
+            --surface-el:  #1E1E1E;
+            --surface-var: #222222;
+            --divider:     #2A2A2A;
+            --text:        #F0F0F0;
+            --text-muted:  #888888;
+            --text-dim:    #555555;
+            --border:      rgba(255,255,255,0.07);
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
+        html { scroll-behavior: smooth; scroll-padding-top: 72px; }
 
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: var(--dark);
+            background: var(--bg);
             color: var(--text);
             line-height: 1.75;
         }
@@ -32,15 +38,15 @@
         nav {
             position: sticky;
             top: 0;
-            z-index: 100;
-            background: rgba(15, 23, 42, 0.94);
-            backdrop-filter: blur(24px);
-            -webkit-backdrop-filter: blur(24px);
-            border-bottom: 1px solid var(--border);
+            z-index: 1000;
+            background: rgba(13,13,13,0.92);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--divider);
             padding: 14px 48px;
             display: flex;
             align-items: center;
-            justify-content: space-between;
+            gap: 40px;
         }
         .nav-logo {
             display: flex;
@@ -54,12 +60,14 @@
         }
         .nav-logo-icon {
             width: 32px; height: 32px;
-            background: linear-gradient(135deg, var(--emerald), var(--cyan));
-            border-radius: 9px;
+            border-radius: 8px;
+            background: rgba(74,222,128,0.15);
+            border: 1px solid rgba(74,222,128,0.25);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 0.9rem;
+            font-size: 1rem;
+            flex-shrink: 0;
         }
         .nav-back {
             display: inline-flex;
@@ -70,13 +78,14 @@
             font-size: 0.875rem;
             font-weight: 500;
             transition: color 0.2s;
+            margin-left: auto;
         }
-        .nav-back:hover { color: var(--emerald); }
+        .nav-back:hover { color: var(--green); }
 
         /* ══ HERO STRIP ═══════════════════════════════════════════════ */
         .pp-hero {
-            background: linear-gradient(160deg, rgba(16,185,129,0.07) 0%, transparent 60%);
-            border-bottom: 1px solid var(--border);
+            background: linear-gradient(160deg, rgba(74,222,128,0.07) 0%, transparent 60%);
+            border-bottom: 1px solid var(--divider);
             padding: 64px 48px 52px;
             position: relative;
             overflow: hidden;
@@ -86,15 +95,15 @@
             position: absolute;
             top: -80px; right: -80px;
             width: 360px; height: 360px;
-            background: radial-gradient(circle, rgba(16,185,129,0.09) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(74,222,128,0.09) 0%, transparent 70%);
             pointer-events: none;
         }
         .pp-inner { max-width: 760px; margin: 0 auto; position: relative; z-index: 1; }
         .pp-tag {
             display: inline-block;
-            background: rgba(16,185,129,0.1);
-            border: 1px solid rgba(16,185,129,0.22);
-            color: var(--emerald);
+            background: rgba(74,222,128,0.09);
+            border: 1px solid rgba(74,222,128,0.22);
+            color: var(--green);
             padding: 4px 14px;
             border-radius: 50px;
             font-size: 0.76rem;
@@ -129,7 +138,7 @@
         .pp-meta-dot {
             width: 6px; height: 6px;
             border-radius: 50%;
-            background: var(--emerald);
+            background: var(--green);
         }
 
         /* ══ CONTENT ══════════════════════════════════════════════════ */
@@ -140,8 +149,8 @@
         }
 
         .pp-toc {
-            background: var(--dark-2);
-            border: 1px solid var(--border);
+            background: var(--surface);
+            border: 1px solid var(--divider);
             border-radius: 16px;
             padding: 24px 28px;
             margin-bottom: 48px;
@@ -176,7 +185,7 @@
             content: counter(toc, decimal-leading-zero);
             font-size: 0.72rem;
             font-weight: 700;
-            color: var(--emerald);
+            color: var(--green);
             min-width: 22px;
         }
         .pp-toc a:hover { color: var(--text); }
@@ -197,7 +206,7 @@
         .pp-section h2::before {
             content: '';
             width: 4px; height: 22px;
-            background: linear-gradient(to bottom, var(--emerald), var(--cyan));
+            background: linear-gradient(to bottom, var(--green), var(--cyan));
             border-radius: 2px;
             flex-shrink: 0;
         }
@@ -224,7 +233,7 @@
         }
         .pp-section ul li::before {
             content: '→';
-            color: var(--emerald);
+            color: var(--green);
             font-weight: 700;
             flex-shrink: 0;
             margin-top: 1px;
@@ -233,29 +242,29 @@
         .pp-section ol li { counter-increment: ol-counter; }
         .pp-section ol li::before {
             content: counter(ol-counter) '.';
-            color: var(--emerald);
+            color: var(--green);
             font-weight: 700;
             flex-shrink: 0;
             min-width: 20px;
         }
         .pp-section strong { color: var(--text); font-weight: 600; }
-        .pp-section a { color: var(--emerald); text-decoration: none; }
+        .pp-section a { color: var(--green); text-decoration: none; }
         .pp-section a:hover { text-decoration: underline; }
 
         .info-card {
-            background: var(--dark-2);
-            border: 1px solid var(--border);
+            background: var(--surface);
+            border: 1px solid var(--divider);
             border-radius: 14px;
             padding: 20px 22px;
             margin: 18px 0;
         }
         .info-card.highlight {
-            background: rgba(16,185,129,0.06);
-            border-color: rgba(16,185,129,0.18);
+            background: rgba(74,222,128,0.06);
+            border-color: rgba(74,222,128,0.18);
         }
         .info-card.warning {
-            background: rgba(245,158,11,0.06);
-            border-color: rgba(245,158,11,0.18);
+            background: rgba(251,191,36,0.06);
+            border-color: rgba(251,191,36,0.18);
         }
         .info-card-title {
             font-size: 0.82rem;
@@ -282,12 +291,12 @@
             color: var(--text-muted);
             text-transform: uppercase;
             letter-spacing: 0.05em;
-            border-bottom: 1px solid var(--border);
+            border-bottom: 1px solid var(--divider);
         }
         .permission-table td {
             padding: 10px 14px;
             color: var(--text-muted);
-            border-bottom: 1px solid rgba(255,255,255,0.04);
+            border-bottom: 1px solid var(--divider);
             vertical-align: top;
         }
         .permission-table tr:last-child td { border-bottom: none; }
@@ -299,19 +308,19 @@
             font-size: 0.7rem;
             font-weight: 600;
         }
-        .perm-required { background: rgba(239,68,68,0.12); color: #F87171; }
-        .perm-optional { background: rgba(245,158,11,0.12); color: #FCD34D; }
+        .perm-required { background: rgba(255,107,107,0.12); color: var(--red); }
+        .perm-optional { background: rgba(251,191,36,0.12); color: var(--amber); }
 
         .divider {
             height: 1px;
-            background: var(--border);
+            background: var(--divider);
             margin: 48px 0;
         }
 
         /* ══ CONTACT CARD ═════════════════════════════════════════════ */
         .contact-card {
-            background: linear-gradient(145deg, rgba(16,185,129,0.07), rgba(6,182,212,0.04));
-            border: 1px solid rgba(16,185,129,0.18);
+            background: linear-gradient(145deg, rgba(74,222,128,0.07), rgba(34,211,238,0.03));
+            border: 1px solid rgba(74,222,128,0.18);
             border-radius: 20px;
             padding: 32px;
             text-align: center;
@@ -323,8 +332,8 @@
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            background: linear-gradient(135deg, var(--emerald), var(--cyan));
-            color: white;
+            background: var(--green);
+            color: #0A0A0A;
             text-decoration: none;
             padding: 11px 24px;
             border-radius: 10px;
@@ -336,7 +345,7 @@
 
         /* ══ FOOTER ═══════════════════════════════════════════════════ */
         .pp-footer {
-            border-top: 1px solid var(--border);
+            border-top: 1px solid var(--divider);
             padding: 28px 48px;
             display: flex;
             align-items: center;
@@ -353,8 +362,8 @@
             font-size: 0.82rem;
             transition: color 0.2s;
         }
-        .pp-footer-links a:hover { color: var(--emerald); }
-        .pp-footer-copy { font-size: 0.78rem; color: var(--dark-3); }
+        .pp-footer-links a:hover { color: var(--green); }
+        .pp-footer-copy { font-size: 0.78rem; color: var(--text-dim); }
 
         @media (max-width: 720px) {
             nav { padding: 12px 20px; }
@@ -371,7 +380,7 @@
 <!-- ══ NAV ══════════════════════════════════════════════════════════ -->
 <nav>
     <a href="index.html" class="nav-logo">
-        <div class="nav-logo-icon">💰</div>
+        <div class="nav-logo-icon" aria-hidden="true">💚</div>
         SmartSpend
     </a>
     <a href="index.html" class="nav-back">← Back to Home</a>
