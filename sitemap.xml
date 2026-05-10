@@ -1,20 +1,20 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 
   <url>
-    <loc>https://smartspend.app/</loc>
+    <loc>https://smartspend.xyz/</loc>
     <lastmod>2026-05-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
     <image:image>
-      <image:loc>https://smartspend.app/08-App-Icon-512.png</image:loc>
+      <image:loc>https://smartspend.xyz/08-App-Icon-512.png</image:loc>
       <image:title>SmartSpend — Free Expense Tracker App for Android</image:title>
     </image:image>
   </url>
 
   <url>
-    <loc>https://smartspend.app/privacy-policy.html</loc>
+    <loc>https://smartspend.xyz/privacy-policy.html</loc>
     <lastmod>2026-03-20</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
